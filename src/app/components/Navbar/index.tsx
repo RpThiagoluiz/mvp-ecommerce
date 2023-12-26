@@ -9,6 +9,7 @@ import Link from 'next/link'
 import { Navigation } from './components/Navigation'
 import { MobileNavigation } from './components/MobileNavigation'
 import { useControlNavBar } from './hook/useControlNavBar'
+import { Logo } from 'whitelabel/test'
 
 export function Navbar() {
     const [mobileMenu, setMobileMenu] = useState(false)
@@ -23,12 +24,12 @@ export function Navbar() {
 
     return (
         <nav
-            className={`w-full h-[50px] md:h-[80px] bg-white flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${showNavBar}`}
+            className={`w-full h-[50px] md:h-[80px] bg-cyan-50 flex items-center justify-between z-20 sticky top-0 transition-transform duration-300 ${showNavBar}`}
         >
             <div className="w-full max-w-[1280px] px-5 md:px-10 mx-auto h-[60px] flex items-center justify-between">
                 <Link href="/">
                     <Image
-                        src="/Logo.png"
+                        src={Logo}
                         alt="LOGO CLIENTE"
                         width={40}
                         height={40}

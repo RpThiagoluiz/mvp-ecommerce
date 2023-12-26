@@ -20,10 +20,9 @@ export default function RootLayout({
 }) {
     return (
         <html lang="pt-br">
-            <body className={inter.className}>
+            <body className={`${inter.className} bg-cyan-200`}>
                 <Navbar />
                 <Wrapper>{children}</Wrapper>
-
                 <Footer />
             </body>
         </html>

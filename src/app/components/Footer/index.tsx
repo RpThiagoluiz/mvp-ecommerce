@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import { FaInstagram, FaWhatsapp, FaFacebook } from 'react-icons/fa'
-import {socialMedia} from 'whitelabel/test'
+import { socialMedia } from 'whitelabel/test'
 
 export function Footer() {
     return (
-        <footer className="flex flex-col  w-full p-1  mt-5 bg-pink-100">
+        <footer className="flex flex-col  w-full p-1 pt-5 mt-5 bg-cyan-50">
             <Link
                 href={`https://api.whatsapp.com/send?l=pt_br?phone=${socialMedia.WhatsApp}&text=Ol%C3%A1%2C+....`}
                 target="_blank"
@@ -13,7 +13,7 @@ export function Footer() {
                 <FaWhatsapp className="text-[32px] text-green-500" />
                 <h5>Fale conosco!</h5>
             </Link>
-            <div className="divider">Redes Sociais</div>
+            <div className="divider text-gray-500">Redes Sociais</div>
 
             <div className="flex flex-row gap-5 h-32 items-center justify-center bg-inherit">
                 <Link

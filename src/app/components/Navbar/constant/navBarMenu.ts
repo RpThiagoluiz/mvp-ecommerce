@@ -1,5 +1,5 @@
 export const navBarMenu = [
-    { name: 'Home', url: '/' },
+    { name: 'Inicio', url: '/' },
     { name: 'Contato', url: '/contact' },
     { name: 'Localização', url: '/location' },
 ] as const
