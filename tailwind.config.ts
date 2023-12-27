@@ -8,10 +8,16 @@ const config: Config = {
     ],
     theme: {
         extend: {
-            backgroundImage: {
-                'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-                'gradient-conic':
-                    'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+            keyframes: {
+                'ping-slow': {
+                    '75%, 100%': {
+                        transform: 'scale(1.35)',
+                        opacity: '0.75',
+                    },
+                },
+            },
+            animation: {
+                'ping-slow': 'ping-slow 4.25s ease-in-out infinite',
             },
         },
     },

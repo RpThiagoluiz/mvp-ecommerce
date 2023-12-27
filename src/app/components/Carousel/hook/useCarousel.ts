@@ -9,34 +9,42 @@ export function useCarousel() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            currentImage === maxIndex && setCurrentImage(0)
+            if (currentImage === maxIndex) {
+                setCurrentImage(0)
+                return
+            }
 
             setCurrentImage((prevState) => prevState + 1)
         }, timeToChangeImage)
         return () => clearInterval(interval)
     }, [currentImage])
 
-    const handlerManual = () => {
-        const next = () => {
-            currentImage === maxIndex && setCurrentImage(0)
-
-            setCurrentImage((prevState) => prevState + 1)
+    const next = () => {
+        if (currentImage === maxIndex) {
+            setCurrentImage(0)
+            return
         }
 
-        const previous = () => {
-            currentImage === 0 && setCurrentImage(maxIndex)
+        setCurrentImage((prevState) => prevState + 1)
+    }
 
-            setCurrentImage((prevState) => prevState - 1)
+    const previous = () => {
+        if (currentImage === 0) {
+            setCurrentImage(maxIndex)
+            return
         }
 
-        return {
-            next,
-            previous,
-        }
+        setCurrentImage((prevState) => prevState - 1)
+    }
+
+    const selectImage = (index: number) => {
+        setCurrentImage(index)
     }
 
     return {
-        handlerManual,
+        next,
+        previous,
+        selectImage,
         currentImage,
     }
 }
