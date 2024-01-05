@@ -16,7 +16,7 @@ export function MobileNavigation({ handlerMobileMenu }: Props) {
     }
 
     return (
-        <ul className="flex flex-col md:hidden font-bold absolute top-[50px] left-0 w-full h-[calc(100vh-50px)] bg-white border-t text-[#FCA311]">
+        <ul className="flex flex-col md:hidden font-bold absolute top-[50px] left-0 w-1/2 h-[calc(100vh-50px)] bg-white border-t text-blue-600">
             {navBarMenu.map((el: NavBarMenu) =>
                 !!el.subMenu ? (
                     <li
