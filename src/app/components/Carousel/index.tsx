@@ -25,10 +25,10 @@ export function Carousel({ slides }: { slides: StaticImageData[] }) {
             </div>
 
             <div className="absolute top-0 h-full w-full justify-between items-center flex text-white px-10 text-3xl">
-                <button onClick={carousel.previous}>
+                <button onClick={carousel.previous} className='text-[#FCA311]'>
                     <FaChevronLeft />
                 </button>
-                <button onClick={carousel.next}>
+                <button onClick={carousel.next} className='text-[#FCA311]'>
                     <FaChevronRight />
                 </button>
             </div>
@@ -43,7 +43,7 @@ export function Carousel({ slides }: { slides: StaticImageData[] }) {
                             key={'circle' + index}
                             className={`rounded-full w-5 h-5 cursor-pointer  ${
                                 index == carousel.currentImage
-                                    ? 'bg-white'
+                                    ? 'bg-[#FCA311]'
                                     : 'bg-gray-500'
                             }`}
                         ></div>

@@ -9,7 +9,7 @@ export const Navigation = () => {
     const onMouseLeave = () => setShowSubMenu(false)
 
     return (
-        <ul className="hidden md:flex items-center gap-8 font-medium text-black">
+        <ul className="hidden md:flex items-center gap-8 font-medium text-[#FCA311]">
             {navBarMenu.map((el: NavBarMenu) =>
                 !!el.subMenu ? (
                     <li
@@ -21,7 +21,7 @@ export const Navigation = () => {
                         {el.name}
                         <BsChevronDown size={14} />
                         {showSubMenu && (
-                            <ul className="bg-white absolute top-6 left-2 min-w-[250px] px-1 py-1 text-black shadow-lg">
+                            <ul className="bg-white absolute top-6 left-2 min-w-[250px] px-1 py-1 text-[#FCA311] shadow-lg">
                                 {el.subMenu.map((sub) => (
                                     <Link href="/" key={sub}>
                                         <li className="h-12 flex justify-between items-center px-3 hover:bg-black/[0.03] rounded-md">
