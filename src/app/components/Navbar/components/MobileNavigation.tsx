@@ -2,12 +2,15 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { BsChevronDown } from 'react-icons/bs'
 import { navBarMenu, type NavBarMenu } from '../constant/navBarMenu'
+import { usePathname } from 'next/navigation'
 
 type Props = {
     handlerMobileMenu: () => void
 }
 
 export function MobileNavigation({ handlerMobileMenu }: Props) {
+  const currentPath = usePathname();
+
     const [showSubMenu, setShowSubMenu] = useState(false)
 
     const onClickSubMenu = () => {
@@ -16,12 +19,12 @@ export function MobileNavigation({ handlerMobileMenu }: Props) {
     }
 
     return (
-        <ul className="flex flex-col md:hidden font-bold absolute top-[50px] left-0 w-1/2 h-[calc(100vh-50px)] bg-white border-t text-blue-600">
+        <ul className="flex flex-col md:hidden font-bold absolute top-[50px] left-0 w-1/2 h-[calc(100vh-50px)] bg-white border-t">
             {navBarMenu.map((el: NavBarMenu) =>
                 !!el.subMenu ? (
                     <li
                         key={el.url}
-                        className="cursor-pointer py-4 px-5 border-b flex flex-col relative"
+                        className={`cursor-pointer py-4 px-5 border-b flex flex-col relative ${currentPath === el.url ? "text-blue-600" : "text-zinc-600"}`}
                         onClick={() => setShowSubMenu(!showSubMenu)}
                     >
                         <div className="flex justify-between items-center">
@@ -48,12 +51,13 @@ export function MobileNavigation({ handlerMobileMenu }: Props) {
                         )}
                     </li>
                 ) : (
-                    <li className="py-4 px-5 border-b" key={el.url}>
+                    <li className={`py-4 px-5 border-b flex flex-col relative ${currentPath === el.url ? "text-blue-600" : "text-zinc-600"}`} key={el.url}>
                         <Link href={el.url} onClick={handlerMobileMenu}>
                             {el.name}
                         </Link>
                     </li>
                 )
+                
             )}
         </ul>
     )

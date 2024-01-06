@@ -2,8 +2,10 @@ import React, { useState } from 'react'
 import { BsChevronDown } from 'react-icons/bs'
 import Link from 'next/link'
 import { navBarMenu, type NavBarMenu } from '../constant/navBarMenu'
+import { usePathname } from 'next/navigation'
 
 export const Navigation = () => {
+  const currentPath = usePathname();
     const [showSubMenu, setShowSubMenu] = useState(false)
     const onMouseEnter = () => setShowSubMenu(true)
     const onMouseLeave = () => setShowSubMenu(false)
@@ -17,6 +19,7 @@ export const Navigation = () => {
                         onMouseEnter={onMouseEnter}
                         onMouseLeave={onMouseLeave}
                         className="cursor-pointer flex items-center gap-2 relative"
+                        
                     >
                         {el.name}
                         <BsChevronDown size={14} />
@@ -36,7 +39,7 @@ export const Navigation = () => {
                         )}
                     </li>
                 ) : (
-                    <li key={el.url} className="cursor-pointer ">
+                    <li key={el.url} className={`cursor-pointer ${currentPath === el.url ? "text-blue-600" : "text-zinc-600"}`}>
                         {el.url && <Link href={el.url}>{el.name}</Link>}
                     </li>
                 )
