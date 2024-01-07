@@ -8,7 +8,7 @@ export function Footer() {
             <Link
                 href={`https://api.whatsapp.com/send?l=pt_br?phone=${socialMedia.WhatsApp}&text=Ol%C3%A1%2C+....`}
                 target="_blank"
-                className="mb-5 flex flex-row gap-5 items-center justify-center h-20 border border-green-500 rounded w-1/3 self-center text-green-500 hover:bg-green-500 hover:text-white hover:scale-110 transition-all ease-in-out delay-350"
+                className="mb-5 flex flex-row gap-5 items-center justify-center h-20 border border-green-500 rounded md:w-1/3 w-1/2 self-center text-green-500 hover:bg-green-500 hover:text-white hover:scale-110 transition-all ease-in-out delay-350"
             >
                 <FaWhatsapp className="text-[32px]" />
                 <h5>Fale conosco!</h5>
