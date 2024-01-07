@@ -9,7 +9,7 @@ type Props = {
 }
 
 export function MobileNavigation({ handlerMobileMenu }: Props) {
-  const currentPath = usePathname();
+    const currentPath = usePathname()
 
     const [showSubMenu, setShowSubMenu] = useState(false)
 
@@ -24,7 +24,11 @@ export function MobileNavigation({ handlerMobileMenu }: Props) {
                 !!el.subMenu ? (
                     <li
                         key={el.url}
-                        className={`cursor-pointer py-4 px-5 border-b flex flex-col relative ${currentPath === el.url ? "text-blue-600" : "text-zinc-600"}`}
+                        className={`cursor-pointer py-4 px-5 border-b flex flex-col relative ${
+                            currentPath === el.url
+                                ? 'text-blue-600'
+                                : 'text-zinc-600'
+                        }`}
                         onClick={() => setShowSubMenu(!showSubMenu)}
                     >
                         <div className="flex justify-between items-center">
@@ -51,13 +55,19 @@ export function MobileNavigation({ handlerMobileMenu }: Props) {
                         )}
                     </li>
                 ) : (
-                    <li className={`py-4 px-5 border-b flex flex-col relative ${currentPath === el.url ? "text-blue-600" : "text-zinc-600"}`} key={el.url}>
+                    <li
+                        className={`py-4 px-5 border-b flex flex-col relative ${
+                            currentPath === el.url
+                                ? 'text-blue-600'
+                                : 'text-zinc-600'
+                        }`}
+                        key={el.url}
+                    >
                         <Link href={el.url} onClick={handlerMobileMenu}>
                             {el.name}
                         </Link>
                     </li>
                 )
-                
             )}
         </ul>
     )
