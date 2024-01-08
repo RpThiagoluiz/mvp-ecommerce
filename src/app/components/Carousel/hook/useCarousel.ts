@@ -1,10 +1,10 @@
-import { highLightImages } from '@/app/whitelabel/test'
 import { useEffect, useState } from 'react'
 
-const maxIndex = highLightImages.length - 1
 const timeToChangeImage = 3500 //Milliseconds
 
-export function useCarousel() {
+export function useCarousel(carouselLength: number) {
+    const maxIndex = carouselLength - 1
+
     const [currentImage, setCurrentImage] = useState(0)
 
     useEffect(() => {
@@ -17,7 +17,7 @@ export function useCarousel() {
             setCurrentImage((prevState) => prevState + 1)
         }, timeToChangeImage)
         return () => clearInterval(interval)
-    }, [currentImage])
+    }, [currentImage, maxIndex])
 
     const next = () => {
         if (currentImage === maxIndex) {

@@ -1,12 +1,16 @@
-import { highLightImages, photos } from '@/app/whitelabel/test'
+import { type Product, mockStore } from '@/app/whitelabel/test'
 import { Carousel } from './components/Carousel'
 import { Header } from './components/Header'
-import Image from 'next/image'
+import Image, { StaticImageData } from 'next/image'
 import { Card } from './components/Card'
-import { products } from './whitelabel/test/assets'
 import React from 'react'
+import { mockImages } from './whitelabel/test/mock'
 
 export default function Home() {
+    const productHeroImages: StaticImageData[] = mockStore.products.map(
+        (product: Product) => product.photo[0]
+    )
+
     return (
         <div className="w-full">
             <div className="flex flex-col  md:flex-row m-2 py-2 gap-10">
@@ -21,7 +25,7 @@ export default function Home() {
                         novas cores, novos estilos!
                     </h2>
                 </div>
-                <Carousel slides={highLightImages} />
+                <Carousel slides={mockImages.carouselImages} />
             </div>
 
             <div className="divider">
@@ -32,7 +36,7 @@ export default function Home() {
                 <Image
                     width={480}
                     height={480}
-                    src={photos.photoOne}
+                    src={mockImages.highlight[0]}
                     className="object-cover  h-full w-full
                      rounded-box"
                     alt=""
@@ -44,7 +48,7 @@ export default function Home() {
                 <Image
                     width={360}
                     height={360}
-                    src={photos.photoTwo}
+                    src={mockImages.highlight[1]}
                     className="object-cover rounded-box"
                     alt=""
                     // onClick={() =>
@@ -54,7 +58,7 @@ export default function Home() {
                 <Image
                     width={360}
                     height={360}
-                    src={photos.photoThree}
+                    src={mockImages.highlight[2]}
                     className="object-cover
                      rounded-box"
                     alt=""
@@ -69,7 +73,7 @@ export default function Home() {
             </div>
             <div className="m-[50px] md:mx-[50px] md:grid md:grid-cols-4 lg:grid-cols-5 flex flex-col gap-6">
                 {React.Children.toArray(
-                    products.map((prod) => <Card image={prod} />)
+                    productHeroImages.map((prod) => <Card image={prod} />)
                 )}
             </div>
             <div className="divider">
@@ -77,7 +81,7 @@ export default function Home() {
             </div>
             <div className="m-[50px] md:mx-[50px] md:grid md:grid-cols-4 lg:grid-cols-5 flex flex-col gap-6">
                 {React.Children.toArray(
-                    products.map((prod) => <Card image={prod} />)
+                    productHeroImages.map((prod) => <Card image={prod} />)
                 )}
             </div>
             <div className="divider">
@@ -85,7 +89,7 @@ export default function Home() {
             </div>
             <div className="m-[50px] md:mx-[50px] md:grid md:grid-cols-4 lg:grid-cols-5 flex flex-col gap-6">
                 {React.Children.toArray(
-                    products.map((prod) => <Card image={prod} />)
+                    productHeroImages.map((prod) => <Card image={prod} />)
                 )}
             </div>
         </div>

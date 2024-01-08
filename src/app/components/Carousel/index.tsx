@@ -12,7 +12,7 @@ export function Carousel({
     slides: StaticImageData[]
     extraStyles?: React.ComponentProps<'div'>['className']
 }) {
-    const carousel = useCarousel()
+    const carousel = useCarousel(slides.length)
 
     return (
         <div
