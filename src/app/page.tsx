@@ -6,11 +6,13 @@ import { Card } from './components/Card'
 import React from 'react'
 import { mockImages } from './whitelabel/test/mock'
 
-export default function Home() {
-    const productHeroImages: StaticImageData[] = mockStore.products.map(
-        (product: Product) => product.photo[0]
-    )
+const productHeroImages: { image: StaticImageData; id: string }[] =
+    mockStore.products.map((product: Product) => ({
+        image: product.photo[0],
+        id: product.id,
+    }))
 
+export default function Home() {
     return (
         <div className="w-full">
             <div className="flex flex-col  md:flex-row m-2 py-2 gap-10">
@@ -73,7 +75,7 @@ export default function Home() {
             </div>
             <div className="m-[50px] md:mx-[50px] md:grid md:grid-cols-4 lg:grid-cols-5 flex flex-col gap-6">
                 {React.Children.toArray(
-                    productHeroImages.map((prod) => <Card image={prod} />)
+                    productHeroImages.map((prod) => <Card {...prod} />)
                 )}
             </div>
             <div className="divider">
@@ -81,7 +83,7 @@ export default function Home() {
             </div>
             <div className="m-[50px] md:mx-[50px] md:grid md:grid-cols-4 lg:grid-cols-5 flex flex-col gap-6">
                 {React.Children.toArray(
-                    productHeroImages.map((prod) => <Card image={prod} />)
+                    productHeroImages.map((prod) => <Card {...prod} />)
                 )}
             </div>
             <div className="divider">
@@ -89,7 +91,7 @@ export default function Home() {
             </div>
             <div className="m-[50px] md:mx-[50px] md:grid md:grid-cols-4 lg:grid-cols-5 flex flex-col gap-6">
                 {React.Children.toArray(
-                    productHeroImages.map((prod) => <Card image={prod} />)
+                    productHeroImages.map((prod) => <Card {...prod} />)
                 )}
             </div>
         </div>

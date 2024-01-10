@@ -4,5 +4,5 @@ type Wrapper = {
 }
 
 export function Wrapper({ children, extraStyles }: Wrapper) {
-    return <div className={` min-h-[1850px]   ${extraStyles}`}>{children}</div>
+    return <div className={` min-h-[940px]   ${extraStyles}`}>{children}</div>
 }
