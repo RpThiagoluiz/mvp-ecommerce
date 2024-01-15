@@ -11,7 +11,7 @@ export function Footer() {
                 className="mb-5 flex flex-row gap-5 items-center justify-center h-20 border border-green-500 rounded md:w-1/3 w-1/2 self-center text-green-500 hover:bg-green-500 hover:text-white hover:scale-110 transition-all ease-in-out delay-350"
             >
                 <FaWhatsapp className="text-[32px]" />
-                <h5>Fale conosco!</h5>
+                <h5>WhatsApp</h5>
             </Link>
             <div className="divider text-gray-500">Redes Sociais</div>
 
