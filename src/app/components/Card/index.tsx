@@ -19,7 +19,7 @@ export function Card({ image, id }: CardProps) {
                     height={480}
                     src={image}
                     className="
-              h-full  md:w-full w-3/4 group-hover:opacity-90 group-hover:scale-125 cursor-pointer transition-all ease-in-out delay-350"
+              h-full  md:w-full w-3/4 group-hover:opacity-90 group-hover:scale-115 cursor-pointer transition-all ease-in-out delay-350"
                     alt=""
                     onClick={() => console.log('Details', id)}
                 />
