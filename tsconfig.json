@@ -20,8 +20,9 @@
         ],
         "paths": {
             "@/*": ["./src/*"],
-            "components": ["./src/components/*"],
-            "whitelabel/*": ["./src/app/whitelabel/*"]
+            "components/*": ["./src/app/components/*"],
+            "whitelabel/*": ["./src/app/whitelabel/*"],
+            "utils/*": ["./src/utils/*"]
         }
     },
     "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
