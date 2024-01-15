@@ -37,8 +37,8 @@ export type MockData = {
 
 const contact = {
     WhatsApp: '+5562981467685',
-    Facebook: 'thiago.luiz.5621',
-    Instagram: 'thi.luizg',
+    Facebook: 'https://www.facebook.com/',
+    Instagram: 'https://www.instagram.com/',
     location:
         'https://www.google.com.br/maps/place/SHOPPING+DEZOITO/@-16.6601026,-49.2600789,17z/data=!3m1!4b1!4m6!3m5!1s0x935ef3dee867b6e5:0x281a107b92823af0!8m2!3d-16.6601078!4d-49.257504!16s%2Fg%2F11ks6xr54j?entry=ttu',
 }
